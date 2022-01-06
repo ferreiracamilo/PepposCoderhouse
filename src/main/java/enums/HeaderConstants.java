@@ -64,21 +64,21 @@ public class HeaderConstants {
         }
     }
 
-    public enum Accesorios{
+    public enum Accesorio{
         MOCHILA("Mochila");
 
-        private final String getAccesorios;
+        private final String getAccesorio;
 
-        Accesorios(String hMenu) {
-            this.getAccesorios = hMenu;
+        Accesorio(String hMenu) {
+            this.getAccesorio = hMenu;
         }
 
-        public String getAccesorios () {
-            return getAccesorios;
+        public String getAccesorio () {
+            return getAccesorio;
         }
     }
 
-    public enum Marcas{
+    public enum Marca{
         ADIDAS("adidas"),
         CLARKS("clarks"),
         CONVERSE("converse"),
@@ -91,14 +91,14 @@ public class HeaderConstants {
         TOPPER("topper"),
         UMBRO("umbro");
 
-        private final String getMarcas;
+        private final String getMarca;
 
-        Marcas(String hMenu) {
-            this.getMarcas = hMenu;
+        Marca(String hMenu) {
+            this.getMarca = hMenu;
         }
 
-        public String getMarcas () {
-            return getMarcas;
+        public String getMarca () {
+            return getMarca;
         }
     }
 

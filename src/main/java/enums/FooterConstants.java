@@ -20,7 +20,7 @@ public class FooterConstants {
         }
     }
 
-    public enum Destacados{
+    public enum Destacado{
         NOSOTROS("Nosotros"),
         COMO_COMPRAR("Cómo comprar"),
         ENVIOS("Envíos"),
@@ -28,25 +28,25 @@ public class FooterConstants {
         DEVOLUCIONES("Devoluciones"),
         FAQ("Preguntas Frecuentes");
 
-        private final String getDestacados;
+        private final String getDestacado;
 
-        Destacados(String hMenu) {
-            this.getDestacados = hMenu;
+        Destacado(String hMenu) {
+            this.getDestacado = hMenu;
         }
 
-        public String getDestacados () {
-            return getDestacados;
+        public String getDestacado () {
+            return getDestacado;
         }
     }
 
-    public enum AvisosLegales{
+    public enum AvisoLegal{
         TERMCONDITION("Términos y condiciones"),
         PRIVACIDAD("Privacidad"),
         TERMPROMO("Términos de promociones");
 
         private final String getAvisoLegal;
 
-        AvisosLegales(String hMenu) {
+        AvisoLegal(String hMenu) {
             this.getAvisoLegal = hMenu;
         }
 
@@ -55,13 +55,13 @@ public class FooterConstants {
         }
     }
 
-    public enum Redes{
+    public enum Red{
         FACEBOOK("facebook"),
         INSTAGRAM("instagram");
 
         private final String getRed;
 
-        Redes(String hMenu) {
+        Red(String hMenu) {
             this.getRed = hMenu;
         }
 
@@ -70,10 +70,47 @@ public class FooterConstants {
         }
     }
 
-    /*
+    public enum MetodoPago{
+        AMEX("Amex"),
+        OCA("Oca"),
+        VISA("Visa"),
+        MASTER("Mastercard"),
+        ABITAB("Abitab"),
+        REDPAGOS("Red Pagos"),
+        MERCADOPAGO("Mercado Pago"),
+        ANDA("Anda"),
+        CABAL("Cabal"),
+        CREDITEL("Creditel"),
+        DINERS("Diners"),
+        LIDER("Líder"),
+        PASSCARD("Passcard"),
+        TARJETAD("Tarjeta D");
 
+        private final String getMetodoPago;
 
+        MetodoPago(String hMenu) {
+            this.getMetodoPago = hMenu;
+        }
 
-    * */
+        public String getMetodoPago () {
+            return getMetodoPago;
+        }
+    }
+
+    public enum AtencionCliente{
+        AMEX("De lunes a viernes"),
+        OCA("Whatsapp"),
+        TARJETAD("Mail");
+
+        private final String getAtencionCliente;
+
+        AtencionCliente(String hMenu) {
+            this.getAtencionCliente = hMenu;
+        }
+
+        public String getAtencionCliente () {
+            return getAtencionCliente;
+        }
+    }
 
 }
