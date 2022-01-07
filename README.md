@@ -30,4 +30,4 @@ Integral testing project to fulfill final course's assignment of <a href="https:
 
 ### Follow instructions before running project
 * Store webdrivers (opera,mozilla and/or chrome) in "resources-files" and follow webdriver file name indicated in BasePage.java
-* Descargar el archivo <a href="https://drive.google.com/drive/folders/151_Ty8kRKG92EvoDseldOasepganwRjl">"data.properties"</a> y modificar credenciales (excepto URL). Almacenar dentro de folder "resources-files" del proyecto. 
+* Download file <a href="https://drive.google.com/drive/folders/151_Ty8kRKG92EvoDseldOasepganwRjl">"data.properties"</a> and modify user credentials. Store in "resources-files" at project level. 
