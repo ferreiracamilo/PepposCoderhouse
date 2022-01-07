@@ -1,4 +1,4 @@
-# PepposCoderhouse (español)
+# PepposCoderhouse (Español)
 Proyecto de testing integral para proyecto final de curso de  <a href="https://www.coderhouse.com.uy/online/testing-qa-manual">Testing de Coderhouse</a>.
 
 ### Bases del proyecto
