@@ -78,9 +78,9 @@ public class FooterConstants {
     }
 
     public enum AtencionCliente{
-        AMEX("De lunes a viernes"),
-        OCA("Whatsapp"),
-        TARJETAD("Mail");
+        SCHEDULE("De lunes a viernes"),
+        WP("Whatsapp"),
+        MAIL("Mail");
 
         public final String label;
 
