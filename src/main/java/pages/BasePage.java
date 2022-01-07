@@ -72,7 +72,6 @@ public class BasePage {
 
     protected void initializeChrome (){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\resources-files\\chromedriver.exe"); //drivertype and driver exe location
-
         //Set option to take out notification
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--disable-notifications");

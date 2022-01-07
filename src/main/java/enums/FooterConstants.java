@@ -9,14 +9,10 @@ public class FooterConstants {
         AVISOS_LEGALES("Avisos legales"),
         REDES("redes");
 
-        private final String getSection;
+        public final String label;
 
-        Section(String hMenu) {
-            this.getSection = hMenu;
-        }
-
-        public String getSection () {
-            return getSection;
+        Section(String label) {
+            this.label = label;
         }
     }
 
@@ -28,14 +24,10 @@ public class FooterConstants {
         DEVOLUCIONES("Devoluciones"),
         FAQ("Preguntas Frecuentes");
 
-        private final String getDestacado;
+        public final String label;
 
-        Destacado(String hMenu) {
-            this.getDestacado = hMenu;
-        }
-
-        public String getDestacado () {
-            return getDestacado;
+        Destacado(String label) {
+            this.label = label;
         }
     }
 
@@ -44,14 +36,10 @@ public class FooterConstants {
         PRIVACIDAD("Privacidad"),
         TERMPROMO("Términos de promociones");
 
-        private final String getAvisoLegal;
+        public final String label;
 
-        AvisoLegal(String hMenu) {
-            this.getAvisoLegal = hMenu;
-        }
-
-        public String getAvisoLegal () {
-            return getAvisoLegal;
+        AvisoLegal(String label) {
+            this.label = label;
         }
     }
 
@@ -59,14 +47,10 @@ public class FooterConstants {
         FACEBOOK("facebook"),
         INSTAGRAM("instagram");
 
-        private final String getRed;
+        public final String label;
 
-        Red(String hMenu) {
-            this.getRed = hMenu;
-        }
-
-        public String getRed () {
-            return getRed;
+        Red(String label) {
+            this.label = label;
         }
     }
 
@@ -86,14 +70,10 @@ public class FooterConstants {
         PASSCARD("Passcard"),
         TARJETAD("Tarjeta D");
 
-        private final String getMetodoPago;
+        public final String label;
 
-        MetodoPago(String hMenu) {
-            this.getMetodoPago = hMenu;
-        }
-
-        public String getMetodoPago () {
-            return getMetodoPago;
+        MetodoPago(String label) {
+            this.label = label;
         }
     }
 
@@ -102,14 +82,10 @@ public class FooterConstants {
         OCA("Whatsapp"),
         TARJETAD("Mail");
 
-        private final String getAtencionCliente;
+        public final String label;
 
-        AtencionCliente(String hMenu) {
-            this.getAtencionCliente = hMenu;
-        }
-
-        public String getAtencionCliente () {
-            return getAtencionCliente;
+        AtencionCliente(String label) {
+            this.label = label;
         }
     }
 

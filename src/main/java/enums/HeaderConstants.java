@@ -10,14 +10,10 @@ public class HeaderConstants {
         NOVEDADES("Novedades"),
         MARCAS("Marcas");
 
-        private final String getHeaderMenu;
+        public final String label;
 
-        HeaderMenu(String hMenu) {
-            this.getHeaderMenu = hMenu;
-        }
-
-        public String getHeaderMenu () {
-            return getHeaderMenu;
+        HeaderMenu(String label) {
+            this.label = label;
         }
     }
 
@@ -30,14 +26,10 @@ public class HeaderConstants {
         ZAPATO("Zapato"),
         PANCHAS("Panchas");
 
-        private final String getCalzado;
+        public final String label;
 
-        Calzado(String hMenu) {
-            this.getCalzado = hMenu;
-        }
-
-        public String getCalzado () {
-            return getCalzado;
+        Calzado(String label) {
+            this.label = label;
         }
     }
 
@@ -53,28 +45,20 @@ public class HeaderConstants {
         FUTBOL_5("Futbol 5"),
         FUTSAL("Futbol de salón");
 
-        private final String getUso;
+        public final String label;
 
-        Uso(String hMenu) {
-            this.getUso = hMenu;
-        }
-
-        public String getUso () {
-            return getUso;
+        Uso(String label) {
+            this.label = label;
         }
     }
 
     public enum Accesorio{
         MOCHILA("Mochila");
 
-        private final String getAccesorio;
+        public final String label;
 
-        Accesorio(String hMenu) {
-            this.getAccesorio = hMenu;
-        }
-
-        public String getAccesorio () {
-            return getAccesorio;
+        Accesorio(String label) {
+            this.label = label;
         }
     }
 
@@ -91,14 +75,10 @@ public class HeaderConstants {
         TOPPER("topper"),
         UMBRO("umbro");
 
-        private final String getMarca;
+        public final String label;
 
-        Marca(String hMenu) {
-            this.getMarca = hMenu;
-        }
-
-        public String getMarca () {
-            return getMarca;
+        Marca(String label) {
+            this.label = label;
         }
     }
 
