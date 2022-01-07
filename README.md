@@ -1,4 +1,4 @@
-# PepposCoderhouse
+# PepposCoderhouse (español)
 Proyecto de testing integral para proyecto final de curso de  <a href="https://www.coderhouse.com.uy/online/testing-qa-manual">Testing de Coderhouse</a>.
 
 ### Bases del proyecto
@@ -13,11 +13,9 @@ Proyecto de testing integral para proyecto final de curso de  <a href="https://w
 * Almacenar los webdrivers (opera,mozilla y/o chrome) en el folder "resources-files" respetando el nombre indicado en BasePage.java
 * Descargar el archivo <a href="https://drive.google.com/drive/folders/151_Ty8kRKG92EvoDseldOasepganwRjl">"data.properties"</a> y modificar credenciales (excepto URL). Almacenar dentro de folder "resources-files" del proyecto. 
 
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
-/*-------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# PepposCoderhouse
+# PepposCoderhouse (English)
 Integral testing project to fulfill final course's assignment of <a href="https://www.coderhouse.com.uy/online/testing-qa-manual">Testing at Coderhouse</a>. Bare in mind originally project was built in spanish.
 
 ### Basis of the project
