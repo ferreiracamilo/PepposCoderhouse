@@ -68,7 +68,9 @@ public class BasePage {
         return driver;
     }
 
-    //-------------------------- METHODS TO INITIALIZE SPECIFIC DRIVER TYPE  --------------------------//
+    /**
+     * Initilize browsers methods
+     */
 
     protected void initializeChrome (){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\resources-files\\chromedriver.exe"); //drivertype and driver exe location
@@ -99,7 +101,9 @@ public class BasePage {
         driver = new OperaDriver(options); //create opera driver using as argument options created
     }
 
-    //-------------------------- METHODS TO INITIALIZE SPECIFIC DRIVER TYPE  --------------------------//
+    /**
+     * Generic methods that will be implemented in child classes
+     */
 
     public void navigateTo (String url){
         driver.get(url);
@@ -121,6 +125,15 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
+    public static void pause(long timeInMilliSeconds) {
+
+        long timestamp = System.currentTimeMillis();
+
+        do {
+
+        } while (System.currentTimeMillis() < timestamp + timeInMilliSeconds);
+
+    }
 
     //-----------------------------------------------------------------//
     //-------------------------- END METHODS --------------------------//

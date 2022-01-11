@@ -3,12 +3,12 @@ package enums;
 public class HeaderConstants {
 
     public enum HeaderMenu{
-        HOMBRE("Hombre"),
-        MUJER("Mujer"),
-        NINOS("Niños"),
-        ACCESORIOS("Accesorios"),
-        NOVEDADES("Novedades"),
-        MARCAS("Marcas");
+        HOMBRE("it hombre"),
+        MUJER("it mujer"),
+        NINOS("it ninos"),
+        ACCESORIOS("it accesorios"),
+        NOVEDADES("it novedades"),
+        MARCAS("it marcas");
 
         public final String label;
 
@@ -18,13 +18,13 @@ public class HeaderConstants {
     }
 
     public enum Calzado{
-        BOTA("Bota"),
-        CHAMPIONES("Championes"),
-        ZUECO("Zueco"),
-        SANDALIAS("Sandalias"),
-        ACCESORIOS("Accesorios"),
-        ZAPATO("Zapato"),
-        PANCHAS("Panchas");
+        BOTA("bota"),
+        CHAMPIONES("championes"),
+        ZUECO("zueco"),
+        SANDALIAS("sandalias"),
+        ACCESORIOS("accesorios"),
+        ZAPATO("zapato"),
+        PANCHAS("panchas");
 
         public final String label;
 
@@ -34,16 +34,16 @@ public class HeaderConstants {
     }
 
     public enum Uso{
-        FITNESS("Fitness"),
-        RUNNING("Running"),
-        FUTBOL("Futbol"),
-        TREKKING("Trekking"),
-        BASKET("Basket"),
-        TENNIS("Tennis"),
-        AQUATIC("Aquatic"),
-        FUTBOL_CANCHA("Futbol cancha"),
-        FUTBOL_5("Futbol 5"),
-        FUTSAL("Futbol de salón");
+        FITNESS("fitness"),
+        RUNNING("running"),
+        FUTBOL("futbol"),
+        TREKKING("trekking"),
+        BASKET("basket"),
+        TENNIS("tennis"),
+        AQUATIC("aquatic"),
+        FUTBOL_CANCHA("futbol cancha"),
+        FUTBOL_5("futbol 5"),
+        FUTSAL("futbol de salón");
 
         public final String label;
 
@@ -53,7 +53,7 @@ public class HeaderConstants {
     }
 
     public enum Accesorio{
-        MOCHILA("Mochila");
+        MOCHILA("mochila");
 
         public final String label;
 
