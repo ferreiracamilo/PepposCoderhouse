@@ -3,6 +3,7 @@ package pages;
 import enums.FooterConstants;
 import enums.HeaderConstants;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,6 +11,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.support.PageFactory;
@@ -25,6 +27,7 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Actions action;
 
     //-------------------------- END VARIABLES --------------------------//
 
@@ -37,6 +40,7 @@ public class BasePage {
     public BasePage(WebDriver driver){
         wait = new WebDriverWait(driver,30); //Will be used for explicit and/or fluent wait within inherited classes
         PageFactory.initElements(driver, this); //Will be use to create webelement applying page factory within inherited classes
+        action = new Actions(driver);
     }
 
     //-------------------------- END CONSTRUCTOR --------------------------//
@@ -133,6 +137,20 @@ public class BasePage {
 
         } while (System.currentTimeMillis() < timestamp + timeInMilliSeconds);
 
+    }
+
+    public boolean isError404Present(){
+        return getAllElements("//div[@id='msg404']").size() > 0;
+    }
+
+    public void Hover (WebElement element){
+        action.moveToElement(element).perform();
+    }
+
+    public void moveNclick(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
+        element.click();
     }
 
     //-----------------------------------------------------------------//

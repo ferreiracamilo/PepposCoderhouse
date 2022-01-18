@@ -1,6 +1,17 @@
 package pages.producto;
 
-public class BusquedaProducto {
+import org.openqa.selenium.WebDriver;
+import pages.BasePage;
+
+public class BusquedaProducto extends BasePage {
+    /**
+     * Region Constructor
+     *
+     * @param driver
+     */
+    public BusquedaProducto(WebDriver driver) {
+        super(driver);
+    }
 
     /*
 

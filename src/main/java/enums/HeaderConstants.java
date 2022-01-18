@@ -17,67 +17,40 @@ public class HeaderConstants {
         }
     }
 
-    public enum Calzado{
-        BOTA("bota"),
-        CHAMPIONES("championes"),
-        ZUECO("zueco"),
-        SANDALIAS("sandalias"),
-        ACCESORIOS("accesorios"),
-        ZAPATO("zapato"),
-        PANCHAS("panchas");
+    public enum Subitems{
+        Calzado_BOTA("bota"),
+        Calzado_CHAMPIONES("championes"),
+        Calzado_ZUECO("zueco"),
+        Calzado_SANDALIAS("sandalias"),
+        Calzado_ACCESORIOS("accesorios"),
+        Calzado_ZAPATO("zapato"),
+        Calzado_PANCHAS("panchas"),
+        Uso_FITNESS("fitness"),
+        Uso_RUNNING("running"),
+        Uso_FUTBOL("futbol"),
+        Uso_TREKKING("trekking"),
+        Uso_BASKET("basket"),
+        Uso_TENNIS("tennis"),
+        Uso_AQUATIC("aquatic"),
+        Uso_FUTBOL_CANCHA("futbol cancha"),
+        Uso_FUTBOL_5("futbol 5"),
+        Uso_FUTSAL("futbol de salón"),
+        Accesorio_MOCHILA("mochila"),
+        Marca_ADIDAS("adidas"),
+        Marca_CLARKS("clarks"),
+        Marca_CONVERSE("converse"),
+        Marca_CROCS("crocs"),
+        Marca_FILA("fila"),
+        Marca_NEW_BALANCE("new-balance"),
+        Marca_PUMA("puma"),
+        Marca_PUSH("push"),
+        Marca_REEBOK("reebok"),
+        Marca_TOPPER("topper"),
+        Marca_UMBRO("umbro");
 
         public final String label;
 
-        Calzado(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum Uso{
-        FITNESS("fitness"),
-        RUNNING("running"),
-        FUTBOL("futbol"),
-        TREKKING("trekking"),
-        BASKET("basket"),
-        TENNIS("tennis"),
-        AQUATIC("aquatic"),
-        FUTBOL_CANCHA("futbol cancha"),
-        FUTBOL_5("futbol 5"),
-        FUTSAL("futbol de salón");
-
-        public final String label;
-
-        Uso(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum Accesorio{
-        MOCHILA("mochila");
-
-        public final String label;
-
-        Accesorio(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum Marca{
-        ADIDAS("adidas"),
-        CLARKS("clarks"),
-        CONVERSE("converse"),
-        CROCS("crocs"),
-        FILA("fila"),
-        NEW_BALANCE("new-balance"),
-        PUMA("puma"),
-        PUSH("push"),
-        REEBOK("reebok"),
-        TOPPER("topper"),
-        UMBRO("umbro");
-
-        public final String label;
-
-        Marca(String label) {
+        Subitems(String label) {
             this.label = label;
         }
     }

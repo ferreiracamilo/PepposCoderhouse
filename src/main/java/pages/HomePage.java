@@ -1,8 +1,14 @@
 package pages;
 
+import enums.BannerConstants;
+import enums.FooterConstants;
+import enums.HeaderConstants;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import pages.producto.BusquedaProducto;
+import pages.producto.Producto;
 
 import java.util.List;
 
@@ -21,7 +27,7 @@ public class HomePage extends BasePage{
      * Header Menu
      */
 
-    private static final String xpHeaderMenuItem = "//ul[@class='lst main'] //li[@class='$HeaderMenu']";
+    private static final String xpHeaderMenuItem = "//ul[@class='lst main'] //li[@class='$HeaderMenu'] /a";
     private static final String xpHeaderSubMenuItem = "//ul[@class='lst main'] //li[@class='$HeaderMenu'] //li[not(contains(@class,'hdr '))] //a[contains(@href,'$SubItem')]";
 
     /**
@@ -59,6 +65,10 @@ public class HomePage extends BasePage{
     //Present if newsletter registration was succesfully
     @FindBy(xpath="//div[@id='ppMsg'] //div[@data-type='ok'] //span[@class='ico']")
     private WebElement newsLetterConfirmIcon;
+
+    //Present if newsletter registration was succesfully
+    @FindBy(xpath="//div[@id='ppMsg'] //div[@data-type='ok'] //span[@class='ico']")
+    private List<WebElement> newsLetterConfirmIconQty;
 
     /**
      * blkInfo section
@@ -166,30 +176,6 @@ public class HomePage extends BasePage{
     @FindBy(xpath="//div[contains(@id,'box') and @style='display: block;'] //h2")
     private List<WebElement> bannerOfertas;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     //-------------------------- END WEBELEMENT/S --------------------------//
 
     //-------------------------- START CONSTRUCTOR --------------------------//
@@ -199,4 +185,94 @@ public class HomePage extends BasePage{
     }
 
     //-------------------------- END CONSTRUCTOR --------------------------//
+
+    //-------------------------- START METHODS --------------------------//
+
+    /**
+     * Verify if looking for a specific footer section is present by using findElements size greather than zero
+     * @param section -> FooterConstants.Section
+     */
+    public boolean assertFootSection (FooterConstants.Section section){
+        return getAllElements(xpFootSection.replace("$SectionTitle",section.label)).size()>0;
+    }
+
+    public boolean assertFootSubItem (FooterConstants.Section section, FooterConstants.Subitems subitem){
+        String xpOption = xpFootSectionItem.replace("$SectionTitle", section.label);
+        xpOption = xpOption.replace("$SubItem",subitem.label);
+        return getAllElements(xpOption).size()>0;
+    }
+
+    public WebDriver clickFootSubItem (FooterConstants.Section section, FooterConstants.Subitems subitem){
+        String xpOption = xpFootSectionItem.replace("$SectionTitle", section.label);
+        xpOption = xpOption.replace("$SubItem",subitem.label);
+        moveNclick(Find(xpOption));
+        return this.driver;
+    }
+
+    public boolean assertHeaderMenu (HeaderConstants.HeaderMenu menu){
+        return getAllElements(xpHeaderMenuItem.replace("$HeaderMenu",menu.label)).size()>0;
+    }
+
+    public BusquedaProducto clickHeaderMenu (HeaderConstants.HeaderMenu menu){
+        Find(xpHeaderMenuItem.replace("$HeaderMenu",menu.label)).click();
+        return new BusquedaProducto(this.driver);
+    }
+
+    public boolean assertHeaderSubItem(HeaderConstants.HeaderMenu menu, HeaderConstants.Subitems subitem){
+        WebElement headerMenuX = Find(xpHeaderMenuItem.replace("$HeaderMenu",menu.label));
+        Hover(headerMenuX);
+        String subItemXP = xpHeaderSubMenuItem.replace("$HeaderMenu",menu.label);
+        subItemXP = subItemXP.replace("$SubItem",subitem.label);
+        return getAllElements(subItemXP).size()>0;
+    }
+
+    public BusquedaProducto clickHeaderSubItem(HeaderConstants.HeaderMenu menu, HeaderConstants.Subitems subitem){
+        WebElement headerMenuX = Find(xpHeaderMenuItem.replace("$HeaderMenu",menu.label));
+        Hover(headerMenuX);
+        String subItemXP = xpHeaderSubMenuItem.replace("$HeaderMenu",menu.label);
+        subItemXP = subItemXP.replace("$SubItem",subitem.label);
+        Find(subItemXP).click();
+        return new BusquedaProducto(this.driver);
+    }
+
+    public boolean assertBannerCampania (BannerConstants.Campania banner){
+        return getAllElements(xpBannerCampania.replace("$BannerCampania",banner.label)).size() > 0;
+    }
+
+    public void clickBannerCampania (BannerConstants.Campania banner){
+        WebElement element = Find(xpBannerCampania.replace("$BannerCampania",banner.label));
+        moveNclick(element);
+    }
+
+    public void verifyHomeLoadedOrRetry (){
+        if(subscribeNote.size()>0){
+            subscribeNoteBtnNo.click();
+        }
+
+        if(isError404Present()){
+            navigateTo("https://www.peppos.com.uy/");
+        }
+
+    }
+
+    public void writeEmailNewsletter (String email){
+        newsLetterEmailTxt.sendKeys(email);
+        newsLetterSubmitBtn.click();
+    }
+
+    public void closeNewsletterConfirmation (){
+        newsLetterConfirmIcon.click();
+    }
+
+    public boolean isNewsLetterAccepted (){
+        return newsLetterConfirmIconQty.size() > 0;
+    }
+
+
+
+
+
+
+
+    //-------------------------- END METHODS --------------------------//
 }
