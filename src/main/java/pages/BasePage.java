@@ -3,6 +3,7 @@ package pages;
 import enums.FooterConstants;
 import enums.HeaderConstants;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -10,14 +11,18 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.firefox.FirefoxProfile;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.opera.OperaDriver;
 import org.openqa.selenium.opera.OperaOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
@@ -25,6 +30,9 @@ public class BasePage {
 
     protected WebDriver driver;
     protected WebDriverWait wait;
+    protected Actions action;
+    protected Properties prop = new Properties();
+    protected FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\resources-files\\data.properties");
 
     //-------------------------- END VARIABLES --------------------------//
 
@@ -34,9 +42,11 @@ public class BasePage {
      * Region Constructor
      */
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) throws IOException {
         wait = new WebDriverWait(driver,30); //Will be used for explicit and/or fluent wait within inherited classes
         PageFactory.initElements(driver, this); //Will be use to create webelement applying page factory within inherited classes
+        action = new Actions(driver);
+        prop.load(fis);
     }
 
     //-------------------------- END CONSTRUCTOR --------------------------//
@@ -68,7 +78,9 @@ public class BasePage {
         return driver;
     }
 
-    //-------------------------- METHODS TO INITIALIZE SPECIFIC DRIVER TYPE  --------------------------//
+    /**
+     * Initilize browsers methods
+     */
 
     protected void initializeChrome (){
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\resources-files\\chromedriver.exe"); //drivertype and driver exe location
@@ -99,7 +111,9 @@ public class BasePage {
         driver = new OperaDriver(options); //create opera driver using as argument options created
     }
 
-    //-------------------------- METHODS TO INITIALIZE SPECIFIC DRIVER TYPE  --------------------------//
+    /**
+     * Generic methods that will be implemented in child classes
+     */
 
     public void navigateTo (String url){
         driver.get(url);
@@ -121,6 +135,41 @@ public class BasePage {
         return driver.findElements(By.xpath(locator));
     }
 
+    public static void pause(long timeInMilliSeconds) {
+
+        long timestamp = System.currentTimeMillis();
+
+        do {
+
+        } while (System.currentTimeMillis() < timestamp + timeInMilliSeconds);
+
+    }
+
+    public boolean isError404Present(){
+        return getAllElements("//div[@id='msg404']").size() > 0;
+    }
+
+    public void Hover (WebElement element){
+        action.moveToElement(element).perform();
+    }
+
+    public void moveNclick(WebElement element){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollIntoView();", element);
+        element.click();
+    }
+
+    public String getPasswordDataProp (){
+        return prop.getProperty("password");
+    }
+
+    public String getUserNameDataProp (){
+        return prop.getProperty("user");
+    }
+
+    public String getURLDataProp (){
+        return prop.getProperty("url");
+    }
 
     //-----------------------------------------------------------------//
     //-------------------------- END METHODS --------------------------//

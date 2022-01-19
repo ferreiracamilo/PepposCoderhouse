@@ -16,75 +16,39 @@ public class FooterConstants {
         }
     }
 
-    public enum Destacado{
-        NOSOTROS("Nosotros"),
-        COMO_COMPRAR("Cómo comprar"),
-        ENVIOS("Envíos"),
-        COMO_CAMBIO("Cómo realizar un cambio"),
-        DEVOLUCIONES("Devoluciones"),
-        FAQ("Preguntas Frecuentes");
+    public enum Subitems{
+        Destacados_NOSOTROS("Nosotros"),
+        Destacados_COMO_COMPRAR("Cómo comprar"),
+        Destacados_ENVIOS("Envíos"),
+        Destacados_COMO_CAMBIO("Cómo realizar un cambio"),
+        Destacados_DEVOLUCIONES("Devoluciones"),
+        Destacados_FAQ("Preguntas Frecuentes"),
+        AvisosLegales_TERMCONDITION("Términos y condiciones"),
+        AvisosLegales_PRIVACIDAD("Privacidad"),
+        AvisosLegales_TERMPROMO("Términos de promociones"),
+        Redes_FACEBOOK("facebook"),
+        Redes_INSTAGRAM("instagram"),
+        MetodosPago_AMEX("Amex"),
+        MetodosPago_OCA("Oca"),
+        MetodosPago_VISA("Visa"),
+        MetodosPago_MASTER("Mastercard"),
+        MetodosPago_ABITAB("Abitab"),
+        MetodosPago_REDPAGOS("Red Pagos"),
+        MetodosPago_MERCADOPAGO("Mercado Pago"),
+        MetodosPago_ANDA("Anda"),
+        MetodosPago_CABAL("Cabal"),
+        MetodosPago_CREDITEL("Creditel"),
+        MetodosPago_DINERS("Diners"),
+        MetodosPago_LIDER("Líder"),
+        MetodosPago_PASSCARD("Passcard"),
+        MetodosPago_TARJETAD("Tarjeta D"),
+        AtencionCliente_SCHEDULE("De lunes a viernes"),
+        AtencionCliente_WP("Whatsapp"),
+        AtencionCliente_MAIL("Mail");
 
         public final String label;
 
-        Destacado(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum AvisoLegal{
-        TERMCONDITION("Términos y condiciones"),
-        PRIVACIDAD("Privacidad"),
-        TERMPROMO("Términos de promociones");
-
-        public final String label;
-
-        AvisoLegal(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum Red{
-        FACEBOOK("facebook"),
-        INSTAGRAM("instagram");
-
-        public final String label;
-
-        Red(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum MetodoPago{
-        AMEX("Amex"),
-        OCA("Oca"),
-        VISA("Visa"),
-        MASTER("Mastercard"),
-        ABITAB("Abitab"),
-        REDPAGOS("Red Pagos"),
-        MERCADOPAGO("Mercado Pago"),
-        ANDA("Anda"),
-        CABAL("Cabal"),
-        CREDITEL("Creditel"),
-        DINERS("Diners"),
-        LIDER("Líder"),
-        PASSCARD("Passcard"),
-        TARJETAD("Tarjeta D");
-
-        public final String label;
-
-        MetodoPago(String label) {
-            this.label = label;
-        }
-    }
-
-    public enum AtencionCliente{
-        SCHEDULE("De lunes a viernes"),
-        WP("Whatsapp"),
-        MAIL("Mail");
-
-        public final String label;
-
-        AtencionCliente(String label) {
+        Subitems(String label) {
             this.label = label;
         }
     }
