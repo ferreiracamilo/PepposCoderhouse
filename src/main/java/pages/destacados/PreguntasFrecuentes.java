@@ -4,6 +4,8 @@ import enums.FAQConstants;
 import org.openqa.selenium.WebDriver;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class PreguntasFrecuentes extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -21,7 +23,7 @@ public class PreguntasFrecuentes extends BasePage {
      *
      * @param driver
      */
-    public PreguntasFrecuentes(WebDriver driver) {
+    public PreguntasFrecuentes(WebDriver driver) throws IOException {
         super(driver);
     }
 

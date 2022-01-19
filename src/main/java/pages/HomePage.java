@@ -10,6 +10,8 @@ import org.openqa.selenium.support.FindBy;
 import pages.producto.BusquedaProducto;
 import pages.producto.Producto;
 
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends BasePage{
@@ -85,6 +87,10 @@ public class HomePage extends BasePage{
     // blkInfo section - Gift icon - "Cambios sin costo" legend
     @FindBy(xpath="//div[@class='blkInfo'] //div[@class='it gift'] //div[contains(text(),'Cambios sin costo')]")
     private WebElement blkInfoExchangeLegend;
+
+    // blkInfo section - Todos los elementos, solo el texto
+    @FindBy(xpath="//div[@class='blkInfo'] //div[@class='tit']")
+    private List<WebElement> blkInfoTexts;
 
     /**
      * Header & Surroundings
@@ -180,7 +186,7 @@ public class HomePage extends BasePage{
 
     //-------------------------- START CONSTRUCTOR --------------------------//
 
-    public HomePage(WebDriver driver) {
+    public HomePage(WebDriver driver) throws IOException {
         super(driver);
     }
 
@@ -213,7 +219,7 @@ public class HomePage extends BasePage{
         return getAllElements(xpHeaderMenuItem.replace("$HeaderMenu",menu.label)).size()>0;
     }
 
-    public BusquedaProducto clickHeaderMenu (HeaderConstants.HeaderMenu menu){
+    public BusquedaProducto clickHeaderMenu (HeaderConstants.HeaderMenu menu) throws IOException {
         Find(xpHeaderMenuItem.replace("$HeaderMenu",menu.label)).click();
         return new BusquedaProducto(this.driver);
     }
@@ -226,7 +232,7 @@ public class HomePage extends BasePage{
         return getAllElements(subItemXP).size()>0;
     }
 
-    public BusquedaProducto clickHeaderSubItem(HeaderConstants.HeaderMenu menu, HeaderConstants.Subitems subitem){
+    public BusquedaProducto clickHeaderSubItem(HeaderConstants.HeaderMenu menu, HeaderConstants.Subitems subitem) throws IOException {
         WebElement headerMenuX = Find(xpHeaderMenuItem.replace("$HeaderMenu",menu.label));
         Hover(headerMenuX);
         String subItemXP = xpHeaderSubMenuItem.replace("$HeaderMenu",menu.label);
@@ -245,19 +251,22 @@ public class HomePage extends BasePage{
     }
 
     public void verifyHomeLoadedOrRetry (){
-        if(subscribeNote.size()>0){
-            subscribeNoteBtnNo.click();
+
+        pause(300); //Assure to wait a minimum of time and then verify if elements are loaded in home page
+
+        if(subscribeNote.size()<1){
+            navigateTo(getURLDataProp());
         }
 
         if(isError404Present()){
-            navigateTo("https://www.peppos.com.uy/");
+            navigateTo(getURLDataProp());
         }
 
     }
 
     public void writeEmailNewsletter (String email){
         newsLetterEmailTxt.sendKeys(email);
-        newsLetterSubmitBtn.click();
+        moveNclick(newsLetterSubmitBtn);
     }
 
     public void closeNewsletterConfirmation (){
@@ -268,8 +277,51 @@ public class HomePage extends BasePage{
         return newsLetterConfirmIconQty.size() > 0;
     }
 
+    public List<WebElement> getBlkInfoTxtsWebElements(){
+        return blkInfoTexts;
+    }
 
+    public String getmessageAboveHeader (){
+        return messageAboveHeader.getText();
+    }
 
+    public void clickPepposLogo (){
+        pepposLogo.click();
+    }
+
+    public String getTopBannerMarcaPrecioMsg (){
+        return topBannerMarcaPrecioMsg.getText();
+    }
+
+    public BusquedaProducto searchProductByInput (String input) throws IOException {
+        moveNclick(searchProdBtn); //In the case web has scrolled down is needed to click before the button
+        searchProdInput.sendKeys(input);
+        searchProdInput.submit();
+        return new BusquedaProducto(this.driver);
+    }
+
+    public void openUserModal (){
+        moveNclick(myAccountIcoAnchor);
+    }
+
+    public String getUserIcoNombre (){
+        return myAccountIcoNombre.getText();
+    }
+
+    public String getUserIcoApellido (){
+        return myAccountIcoApellido.getText();
+    }
+
+    public void logToAccount (){
+        moveNclick(myAccountIcoAnchor);
+        userEmailInput.sendKeys(getUserNameDataProp());
+        userPassInput.sendKeys(getPasswordDataProp());
+    }
+
+    public void createAccount (){
+        moveNclick(myAccountIcoAnchor);
+        createAccountBtn.click();
+    }
 
 
 

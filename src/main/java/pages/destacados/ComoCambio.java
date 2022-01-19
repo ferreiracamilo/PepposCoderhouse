@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class ComoCambio extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -23,7 +25,7 @@ public class ComoCambio extends BasePage {
      *
      * @param driver
      */
-    public ComoCambio(WebDriver driver) {
+    public ComoCambio(WebDriver driver) throws IOException {
         super(driver);
     }
 

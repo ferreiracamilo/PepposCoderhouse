@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class Privacidad extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -26,7 +28,7 @@ public class Privacidad extends BasePage {
      *
      * @param driver
      */
-    public Privacidad(WebDriver driver) {
+    public Privacidad(WebDriver driver) throws IOException {
         super(driver);
     }
 

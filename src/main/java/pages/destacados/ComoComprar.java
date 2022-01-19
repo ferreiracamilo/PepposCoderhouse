@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class ComoComprar extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -23,7 +25,7 @@ public class ComoComprar extends BasePage {
      *
      * @param driver
      */
-    public ComoComprar(WebDriver driver) {
+    public ComoComprar(WebDriver driver) throws IOException {
         super(driver);
     }
 

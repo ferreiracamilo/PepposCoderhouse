@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class Devoluciones extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -23,7 +25,7 @@ public class Devoluciones extends BasePage {
      *
      * @param driver
      */
-    public Devoluciones(WebDriver driver) {
+    public Devoluciones(WebDriver driver) throws IOException {
         super(driver);
     }
 

@@ -18,8 +18,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
+import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class BasePage {
@@ -28,6 +31,8 @@ public class BasePage {
     protected WebDriver driver;
     protected WebDriverWait wait;
     protected Actions action;
+    protected Properties prop = new Properties();
+    protected FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"\\resources-files\\data.properties");
 
     //-------------------------- END VARIABLES --------------------------//
 
@@ -37,10 +42,11 @@ public class BasePage {
      * Region Constructor
      */
 
-    public BasePage(WebDriver driver){
+    public BasePage(WebDriver driver) throws IOException {
         wait = new WebDriverWait(driver,30); //Will be used for explicit and/or fluent wait within inherited classes
         PageFactory.initElements(driver, this); //Will be use to create webelement applying page factory within inherited classes
         action = new Actions(driver);
+        prop.load(fis);
     }
 
     //-------------------------- END CONSTRUCTOR --------------------------//
@@ -151,6 +157,18 @@ public class BasePage {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("arguments[0].scrollIntoView();", element);
         element.click();
+    }
+
+    public String getPasswordDataProp (){
+        return prop.getProperty("password");
+    }
+
+    public String getUserNameDataProp (){
+        return prop.getProperty("user");
+    }
+
+    public String getURLDataProp (){
+        return prop.getProperty("url");
     }
 
     //-----------------------------------------------------------------//

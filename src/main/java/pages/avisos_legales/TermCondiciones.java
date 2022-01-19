@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class TermCondiciones extends BasePage{
 
     //-------------------------- START VARIABLES --------------------------//
@@ -29,7 +31,7 @@ public class TermCondiciones extends BasePage{
      *
      * @param driver
      */
-    public TermCondiciones(WebDriver driver) {
+    public TermCondiciones(WebDriver driver) throws IOException {
         super(driver);
     }
 

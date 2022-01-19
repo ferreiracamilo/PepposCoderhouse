@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import pages.BasePage;
 
+import java.io.IOException;
+
 public class Nosotros extends BasePage {
 
     //-------------------------- START VARIABLES --------------------------//
@@ -26,7 +28,7 @@ public class Nosotros extends BasePage {
      *
      * @param driver
      */
-    public Nosotros(WebDriver driver) {
+    public Nosotros(WebDriver driver) throws IOException {
         super(driver);
     }
 
