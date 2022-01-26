@@ -1,4 +1,4 @@
-# PepposCoderhouse (Español)
+# PepposCoderhouse (Español) [En Progreso]
 Proyecto de testing integral correspondiente al proyecto final de curso de  <a href="https://www.coderhouse.com.uy/online/testing-qa-manual">Testing de Coderhouse</a>.
 
 ### Bases del proyecto
@@ -15,7 +15,7 @@ Proyecto de testing integral correspondiente al proyecto final de curso de  <a h
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-# PepposCoderhouse (English)
+# PepposCoderhouse (English) [In Progress]
 Integral testing project to fulfill final course's assignment of <a href="https://www.coderhouse.com.uy/online/testing-qa-manual">Testing at Coderhouse</a>. Bare in mind originally project was built in spanish.
 
 ### Basis of the project
